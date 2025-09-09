@@ -4,34 +4,29 @@ import { useEffect, useState } from "react";
 import { ThemeToggle } from "./ThemeToggle";
 import { useLang } from "@/i18n";
 
-// ✅ عناصر النافبار دايمًا إنجليزي
+// ✅ عناصر النافبار دايمًا إنجليزي (من غير Courses)
 const navItems = [
   { key: "nav.home",       href: "#hero" },
   { key: "nav.about",      href: "#about" },
   { key: "nav.skills",     href: "#skills" },
   { key: "nav.educations", href: "#educations" },
-  { key: "nav.courses",    href: "#courses" },
   { key: "nav.projects",   href: "#projects" },
   { key: "nav.contact",    href: "#contact" },
 ];
 
-// دالة تقرا النسخة الإنجليزية مباشرة (من غير التأثر بـ lang)
+// دالة تقرا النسخة الإنجليزية مباشرة
 const EN_LABELS = {
   "nav.home": "Home",
   "nav.about": "About",
   "nav.skills": "Skills",
   "nav.educations": "Educations",
-  "nav.courses": "Courses",
   "nav.projects": "Projects",
   "nav.contact": "Contact",
 };
 
 export const Navbar = () => {
-  // بنستخدم useLang لو محتاجينه لأجزاء تانية (زي الفوتر)،
-  // لكن اسم البراند وعناصر النافبار هنخليها دايمًا إنجليزي.
   const { t } = useLang();
 
-  // اسم البراند إنجليزي دائمًا
   const brandFirst = "Mahmoud";
   const brandLast  = "Ibrahim";
 
@@ -53,7 +48,11 @@ export const Navbar = () => {
       for (const s of sections) {
         if (s.element) {
           const r = s.element.getBoundingClientRect();
-          if (r.top <= 100 && r.bottom >= 100) { setActiveLink(`#${s.id}`); found = true; break; }
+          if (r.top <= 100 && r.bottom >= 100) {
+            setActiveLink(`#${s.id}`);
+            found = true;
+            break;
+          }
         }
       }
       if (!found) setActiveLink("#hero");
@@ -107,8 +106,6 @@ export const Navbar = () => {
               </a>
             ))}
           </div>
-
-          {/* Theme only */}
           <ThemeToggle />
         </div>
 
@@ -191,7 +188,6 @@ export const Navbar = () => {
                 </div>
               </div>
 
-              {/* Footer (لو عايزها إنجليزي دايمًا بدّلها لنص ثابت) */}
               <div className="text-xs text-muted-foreground/70 text-center">
                 {t("footer.copy")}
               </div>
