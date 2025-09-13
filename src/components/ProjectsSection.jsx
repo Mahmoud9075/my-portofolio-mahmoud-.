@@ -3,8 +3,6 @@ import { useLang } from "@/i18n";
 
 const projects = [
   {
-
- 
     id: 4,
     title: "Amazon",
     description:
@@ -13,14 +11,13 @@ const projects = [
     tags: ["React", "Vite", "HTML", "Tailwind CSS"],
     demoUrl: "https://amazon-front-kappa.vercel.app/",
     githubUrl: "https://github.com/Mahmoud9075/Amazon",
- 
   },
 
- {
+  {
     id: 1,
     title: "Login System",
     description:
-      "As a Front-End Developer, I built a modern web project using HTML, CSS, JavaScript & Bootstrap. It includes essential pages: Login, Registration, and Welcome, with a clean UI and localStorage support for temporary user data.Project Features 1-Login Page 2-Registration Page 3-Welcome Page after Login  4-Clean and easy-to-use UI 5-Clean and easy-to-use UI ",
+      "As a Front-End Developer, I built a modern web project using HTML, CSS, JavaScript & Bootstrap. It includes essential pages: Login, Registration, and Welcome, with a clean UI and localStorage support for temporary user data. Project Features: 1-Login Page 2-Registration Page 3-Welcome Page after Login 4-Clean and easy-to-use UI.",
     image: "projects/Login System.png",
     tags: ["HTML5", "CSS3", "JavaScript", "LocalStorage", "Responsive Design"],
     demoUrl: "https://mahmoud9075.github.io/login-page./",
@@ -33,35 +30,31 @@ const projects = [
     description:
       "A responsive décor platform that allows users to browse the latest interior designs and easily choose what suits them. The project focuses on providing a smooth user experience and a modern interface, with light/dark mode support for comfortable browsing across all devices.",
     image: "projects/Decor.png",
-       tags: ["JavaScript", "Tailwind CSS", "HTML5", "Next.js"],
+    tags: ["JavaScript", "Tailwind CSS", "HTML5", "Next.js"],
     demoUrl: "https://decor-rho.vercel.app/",
     githubUrl: "https://github.com/Mahmoud9075/-Decor",
-  
   },
-
 
   {
     id: 2,
-    title: " Responsive Weather Forecast Web App",
+    title: "Responsive Weather Forecast Web App",
     description:
-      "A fully responsive weather app built with HTML, CSS,and JavaScript.It fetches real-time weather data and shows temperature, conditions, humidity, and wind speed in a clean, user-friendly interface that works smoothly on all devices",
+      "A fully responsive weather app built with HTML, CSS, and JavaScript. It fetches real-time weather data and shows temperature, conditions, humidity, and wind speed in a clean, user-friendly interface that works smoothly on all devices.",
     image: "projects/Responsive Weather Forecast Web App.png",
     tags: ["HTML5", "CSS3", "JavaScript", "OpenWeatherMap API", "Git & GitHub"],
     demoUrl: "https://mahmoud9075.github.io/weather-app/",
     githubUrl: "https://github.com/Mahmoud9075/weather-app",
-   
   },
+
   {
     id: 3,
-    title: "Hagogah ",
+    title: "Hagogah",
     description:
       "A web-based platform designed for showcasing and managing car sales. Provides a user-friendly interface to browse through a variety of car models, view detailed specifications, and compare options with filtering capabilities.",
     image: "projects/Hagogah .png",
     tags: ["HTML", "CSS", "JavaScript", "Responsive Design"],
     githubUrl: "https://github.com/Mahmoud9075/-Hagogah",
-   
   },
-
 
   {
     id: 6,
@@ -72,7 +65,6 @@ const projects = [
     tags: ["JavaScript", "Tailwind CSS", "HTML5", "Next.js"],
     demoUrl: "https://healthcare-sepia-eta.vercel.app/",
     githubUrl: "https://github.com/Mahmoud9075/healthcare",
-    
   },
 ];
 
@@ -84,7 +76,8 @@ export const ProjectsSection = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            {t("projects.title.1")} <span className="text-primary">{t("projects.title.2")}</span>
+            {t("projects.title.1")}{" "}
+            <span className="text-primary">{t("projects.title.2")}</span>
           </h2>
           <p className="text-center text-muted-foreground mb-4 max-w-2xl mx-auto text-lg">
             {t("projects.subtitle")}
@@ -126,7 +119,8 @@ export const ProjectsSection = () => {
                   {project.title}
                 </h3>
 
-                <p className="text-muted-foreground text-sm mb-4 leading-relaxed line-clamp-3">
+                {/* عدلت هنا: شلت line-clamp-3 علشان النص يظهر كله */}
+                <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
                   {project.description}
                 </p>
 
@@ -164,9 +158,6 @@ export const ProjectsSection = () => {
             </div>
           ))}
         </div>
-
-     
-      
 
         <div className="text-center mt-12">
           <a
